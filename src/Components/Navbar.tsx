@@ -16,6 +16,7 @@ export function Navbar(){
             <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
           </a>
         </div>
+        
         <div className="flex lg:hidden">
           <button
             type="button"
