@@ -8,6 +8,7 @@ import { CompanyPage } from "./Pages/CompanyPage";
 import { Errors } from "./Pages/Errors";
 import { Navbar } from "./Components/Navbar";
 import { Footer } from "./Components/Footer";
+import { Auth } from "./Pages/Auth";
 
 
 export default function Example() {
@@ -27,6 +28,7 @@ export default function Example() {
    <Route path="/product/:proid" element={<ProductPage />} />     //Книга отдельно
    <Route path="/help" element={<Help/>}/>                        //Поддержка
    <Route path="/app" element={<CompanyPage/>}/>                  //О приложении
+   <Route path="/auth" element={<Auth/>}/>                        //Авторизация
    <Route path="*" element={<Errors/>}/>
  </Routes>
  </BrowserRouter>
