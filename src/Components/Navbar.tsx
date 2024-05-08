@@ -28,47 +28,6 @@ export function Navbar(){
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Категории
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-            </Popover.Button>
-
-            <Transition
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                <a href="/books/1part">
-                1 part
-                </a>
-                </div>
-                <div className="p-4">
-                <a href="/books/2part">
-                2 part
-                </a>
-                </div>
-                <div className="p-4">
-                <a href="/books/3part">
-                3 part
-                </a>
-                </div>
-                <div className="p-4">
-                <a href="/books/4part">
-                4 part
-                </a>
-                </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-
           <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
             Главная
           </a>
@@ -85,6 +44,24 @@ export function Navbar(){
           </a>
         </div>
       </nav>
+      <div className="ml-96 place-content-center mr-96 mb-5 flex space-x-4 static">
+      <div className="bg-blue-500 relative py-1 text-center h-10 w-20 max-w-48 font-light hover:bg-blue-700 rounded-full">
+          <div className="text-xs leading-8 text-white">
+          фэнтези 
+          </div>
+        </div>
+        <div className="bg-blue-500 relative py-1 text-center h-10 w-24 max-w-48 font-light hover:bg-blue-700 rounded-full">
+          <div className="text-xs leading-8 text-white">
+            детективы 
+          </div>
+        </div>
+        <div className="bg-blue-500 relative py-1 text-center h-10 w-20 max-w-48 font-light hover:bg-blue-700 rounded-full">
+          <div className="text-xs leading-8 text-white">
+            триллеры
+          </div>
+        </div>
+
+        </div>
       </header>
     </>
 }
