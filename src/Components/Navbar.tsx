@@ -2,6 +2,23 @@ import { Popover } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/16/solid";
 
 
+/*<div className="ml-96 place-content-center mr-96 mb-5 flex space-x-4 static">
+      <a href='/books' key={"fantasy"} onClick={this.handleClick.bind(this, name)} className="bg-blue-500 relative py-1 text-center h-10 w-20 max-w-48 font-light hover:bg-blue-700 rounded-full">
+          <div className="text-xs leading-8 text-white">
+          фэнтези 
+          </div>
+        </a>
+        <div id='detective' className="bg-blue-500 relative py-1 text-center h-10 w-24 max-w-48 font-light hover:bg-blue-700 rounded-full">
+          <div className="text-xs leading-8 text-white">
+            детективы 
+          </div>
+        </div>
+        <div id='thriller' className="bg-blue-500 relative py-1 text-center h-10 w-20 max-w-48 font-light hover:bg-blue-700 rounded-full">
+          <div className="text-xs leading-8 text-white">
+            триллеры
+          </div>
+        </div>
+        </div>*/
 
 export function Navbar(this: any){
 
@@ -41,23 +58,7 @@ export function Navbar(this: any){
           </a>
         </div>
       </nav>
-      /*<div className="ml-96 place-content-center mr-96 mb-5 flex space-x-4 static">
-      <a href='/books' key={"fantasy"} onClick={this.handleClick.bind(this, name)} className="bg-blue-500 relative py-1 text-center h-10 w-20 max-w-48 font-light hover:bg-blue-700 rounded-full">
-          <div className="text-xs leading-8 text-white">
-          фэнтези 
-          </div>
-        </a>
-        <div id='detective' className="bg-blue-500 relative py-1 text-center h-10 w-24 max-w-48 font-light hover:bg-blue-700 rounded-full">
-          <div className="text-xs leading-8 text-white">
-            детективы 
-          </div>
-        </div>
-        <div id='thriller' className="bg-blue-500 relative py-1 text-center h-10 w-20 max-w-48 font-light hover:bg-blue-700 rounded-full">
-          <div className="text-xs leading-8 text-white">
-            триллеры
-          </div>
-        </div>
-        </div>*/
+      
       </header>
     </>
 }
