@@ -45,7 +45,7 @@ export function Footer(){
         </div>
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <Typography variant="small" className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}          >
-            &copy; {currentYear} <a>Material Tailwind. All Rights Reserved.</a>
+            &copy; {currentYear}
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} placeholder={undefined}>

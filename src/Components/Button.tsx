@@ -11,7 +11,7 @@ export function Button(){
     <div className="mt-4">
       <button
         onClick={handleClick}
-        className={active ? var1 : var2 }>
+        className={active ? var2 : var1}>
         Войти
       </button>
     </div>
