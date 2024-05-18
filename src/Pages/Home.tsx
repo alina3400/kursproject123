@@ -2,6 +2,8 @@
 
 export function Home(){
     return <>
-    <h1>Главная </h1>
+    <div>
+        <h1>Главная </h1>
+    </div>
     </>
 }

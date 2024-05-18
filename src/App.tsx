@@ -8,11 +8,13 @@ import { Errors } from "./Pages/Errors";
 import { Navbar } from "./Components/Navbar";
 import { Footer } from "./Components/Footer";
 import { Auth } from "./Pages/Auth";
+import Slider from "./Components/Slider";
 
 export default function App() {
   
   return <>
   <Navbar/>
+  <Slider/>
 <BrowserRouter>
  <Routes>
    <Route path="/" element={<Home/>}/>                            //Главная страница 

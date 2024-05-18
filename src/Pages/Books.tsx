@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export function Books(){
     const [data, setData] = useState([])
     useEffect(() => {
-      fetch('https://books.googleapis.com/books/v1/volumes?q= &key=AIzaSyDWripod65dD9VfcuVjhlFgjcPFAL_uh20')
+      fetch('https://books.googleapis.com/books/v1/volumes?q=&key=AIzaSyDWripod65dD9VfcuVjhlFgjcPFAL_uh20')
       .then( res => res.json())
       .then( data => setData(data.items))
       .catch( err => console.log(err));
