@@ -1,9 +1,10 @@
+import { Books } from "./Books";
 
 
 export function Home(){
     return <>
     <div>
-        <h1>Главная </h1>
+        <Books/>
     </div>
     </>
 }

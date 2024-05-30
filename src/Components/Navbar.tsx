@@ -1,5 +1,6 @@
 import { Popover } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/16/solid";
+import { Typography } from "@material-tailwind/react";
 
 
 /*<div className="ml-96 place-content-center mr-96 mb-5 flex space-x-4 static">
@@ -26,10 +27,11 @@ export function Navbar(this: any){
 <header>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Bookshelf</span>
             <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
           </a>
+          
         </div>
         
         <div className="flex lg:hidden">
