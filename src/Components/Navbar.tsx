@@ -1,6 +1,5 @@
 import { Popover } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/16/solid";
-import { Typography } from "@material-tailwind/react";
 
 
 /*<div className="ml-96 place-content-center mr-96 mb-5 flex space-x-4 static">

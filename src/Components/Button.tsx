@@ -12,7 +12,7 @@ export function Button(){
       <button
         onClick={handleClick}
         className={active ? var2 : var1}>
-        Войти
+          Войти
       </button>
     </div>
     </>

@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-/*https://books.googleapis.com/books/v1/volumes?q=react&key=AIzaSyDWripod65dD9VfcuVjhlFgjcPFAL_uh20*/
 
 export function BookPage(){
     const {proid} = useParams();
     const [data, setData] = useState([])
     useEffect(() => {
-    fetch('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699')
+    fetch('http://localhost:8081/books')
     .then( res => res.json())
-    .then( data => setData(data.items))
+    .then( data => setData(data))
   });
-    const newProd = data.find((data) => data.id == proid)
+    const newProd = data.find((data) => data.id_books == proid)
     return<>
     <div>
     {newProd &&  (
       <>
-      <div className="columns-2 mt-36">
-        <div className="ml-80 w-6/12 outline outline-1 outline-slate-200 overflow-hidden rounded-md hover:bg-gray-200 pl-6 pr-6 pt-6 pb-6">
-        <img src={newProd.volumeInfo.image} className="contrast-125 h-full w-full object-cover object-center"/>
+      <div className="grid justify-items-center grid-cols-2 mt-36 mr-20">
+        <div className="w-72 outline outline-1 overflow-hidden rounded-md">
+        <img src={newProd.image} className="contrast-125 h-full w-full object-cover object-center"/>
         </div>
-      <div className="w-5/6 hover:bg-gray-100 outline outline-1 outline-slate-200 overflow-hidden rounded-md">
-        <h2 className="uppercase text-4xl pl-6 pt-6 pr-6"> {newProd.volumeInfo.title}</h2>
-        <h1 className="text-4xl pl-6 pt-6">{newProd.volumeInfo.authors} $</h1>
-        <h1 className="pl-6 pt-6 pr-6 p-6"> {newProd.volumeInfo.categories}</h1>
+      <div className="w-fit outline outline-1 outline-slate-200 overflow-hidden rounded-md">
+        <h2 className="uppercase font-bold text-4xl pl-6 pt-6 pr-6"> {newProd.name}</h2>
+        <h1 className="text-base font-bold pl-6 pt-6">{newProd.author}</h1>
+        <h1 className="pl-6 pt-6 pr-6"> {newProd.genre}</h1>
+        <h1 className="pl-6 pt-6 pr-6">{newProd.annotation}</h1>
       </div>
       </div>
         </>
