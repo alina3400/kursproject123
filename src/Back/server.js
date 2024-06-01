@@ -27,6 +27,7 @@ app.get("/books", (req, res) => {
 
 app.get("/users", (req, res) => {
   const sql = "SELECT * FROM users";
+
   db.query(sql, (err, data) => {
     if (err) {
       return res.json(err);
@@ -37,13 +38,14 @@ app.get("/users", (req, res) => {
 });
 
 app.post("/users", async (req, res) => {
-  const values = [req.body.name, req.body.emails, req.body.password];
+  const values = [req.body.name, req.body.mail, req.body.password];
+
   sql = "INSERT INTO users (`name`, `mail`, `password`) Values (?)";
   db.query(sql, [values], (err, data) => {
     if (err) {
       res.json(err);
     } else {
-      res.json(data);
+      res.json(data), res.json(token);
     }
   });
 });
@@ -60,8 +62,13 @@ app.get("/notes", (req, res) => {
 });
 
 app.post("/notes", async (req, res) => {
-  const values = [req.body.id_notes, req.body.name, req.body.note, req.body.date];
-  sql = "INSERT INTO cart (`id_notes`,`name`, `note`, `date`) Values (?)";
+  const values = [
+    req.body.id_notes,
+    req.body.name,
+    req.body.note,
+    req.body.date,
+  ];
+  sql = "INSERT INTO notes (`id_notes`,`name`, `note`, `date`) Values (?)";
   db.query(sql, [values], (err, data) => {
     if (err) {
       res.json(err);
@@ -82,7 +89,6 @@ app.post("/notes", async (req, res) => {
       }
     });
   });*/
-
 
 app.listen(PORT, () => {
   console.log("listening");

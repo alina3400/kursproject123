@@ -8,6 +8,8 @@ import { Errors } from "./Pages/Errors";
 import { Navbar } from "./Components/Navbar";
 import { Footer } from "./Components/Footer";
 import { Auth } from "./Pages/Auth";
+import { Regist } from "./Pages/Regist";
+import { Profile } from "./Pages/Profile";
 
 export default function App() {
   return <>
@@ -20,6 +22,8 @@ export default function App() {
    <Route path="/help" element={<Help/>}/>                        //Поддержка
    <Route path="/app" element={<CompanyPage/>}/>                  //О приложении
    <Route path="/auth" element={<Auth/>}/>                        //Авторизация
+   <Route path="/reg" element={<Regist />} />
+   <Route path="/profile" element={<Profile />} />
    <Route path="*" element={<Errors/>}/>
  </Routes>
  </BrowserRouter>

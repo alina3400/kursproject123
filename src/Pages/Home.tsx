@@ -10,6 +10,9 @@ export function Home() {
       .then((data) => setData(data))
       .catch((err) => console.log(err));
   }, []);
+
+  
+
   const navigate = useNavigate();
 
   function handleClick(item: never): void {
@@ -19,14 +22,17 @@ export function Home() {
   return (
     <>
       <div className="bg-white">
-        <div className="grid justify-items-center sm:py-24 lg:max-w-7xl">
+        <div className="grid justify-items-center sm:py-12 lg:max-w-7xl">
           <h2 className="ml-10 text-2xl justify-self-start font-bold tracking-tight text-gray-900">
             Главная
           </h2>
-          <div className="ml-10 mr-10">
+          <div className="ml-10 mt-10 mr-10">
+          <h2 className=" text-lg justify-self-start font-bold tracking-tight text-gray-900">
+            Детективы
+          </h2>
             <img
               src="src\assets\detective_pic.png"
-              className="mt-12 mb-12 justify-self-center mx-auto rounded-lg max-h-36"
+              className="mt-2 mb-12 justify-self-center mx-auto rounded-lg max-h-36"
             ></img>
           </div>
           <div className="justify-items-center place-content-center space-x-10 mt-6 grid grid-cols-5">
@@ -69,9 +75,12 @@ export function Home() {
           </div>
 
           <div className="ml-10 mr-10">
+          <h2 className=" mt-10 text-lg justify-self-start font-bold tracking-tight text-gray-900">
+            Фентези
+          </h2>
             <img
               src="src\assets\fantasy.png"
-              className="mt-14 mb-12 justify-self-center mx-auto rounded-lg max-h-36"
+              className="mt-2 mb-12 justify-self-center mx-auto rounded-lg max-h-36"
             ></img>
           </div>
           <div className="justify-items-center space-x-10 mt-6 grid grid-cols-5">
