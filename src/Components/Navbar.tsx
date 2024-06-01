@@ -1,17 +1,14 @@
 import { Popover } from "@headlessui/react";
-import { Bars3Icon } from "@heroicons/react/16/solid";
 import { useEffect, useState } from "react";
 import { FaRegStickyNote } from "react-icons/fa";
 
 export function Navbar(this: any) {
   const [loggedIn, setLoggedIn] = useState(false);
-  useEffect( () => {
-    const loggedUser = localStorage.getItem('user');
+  useEffect(() => {
+    const loggedUser = localStorage.getItem("user");
     setLoggedIn(Boolean(loggedUser));
   }, []);
 
-
-  
   return (
     <>
       <header>
@@ -22,11 +19,12 @@ export function Navbar(this: any) {
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Bookshelf</span>
-              <img
+              <h1 className=" font-extrabold text-2xl">  BOOKSHEEELF</h1>
+              {/* <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-              />
+              /> */}
             </a>
           </div>
 
@@ -34,8 +32,7 @@ export function Navbar(this: any) {
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            >
-            </button>
+            ></button>
           </div>
           <Popover.Group className="hidden lg:flex lg:gap-x-12">
             <a
@@ -56,20 +53,20 @@ export function Navbar(this: any) {
             >
               Поддержка
             </a>
-            
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {loggedIn === true && (
-             <>
-             <a href="/profile/notes" className="mt-1 mr-10">
-            <FaRegStickyNote />
-            </a>
-              <a
-                href="/profile"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                Профиль
-              </a></>
+              <>
+                <a href="/profile/notes" className="mt-1 mr-10">
+                  <FaRegStickyNote />
+                </a>
+                <a
+                  href="/profile"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Профиль
+                </a>
+              </>
             )}
             {loggedIn === false && (
               <a

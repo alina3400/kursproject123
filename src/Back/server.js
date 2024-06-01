@@ -78,6 +78,18 @@ app.post("/notes", async (req, res) => {
   });
 });
 
+app.post("/fav", async (req, res) => {
+  const values = [req.body.id_books, req.body.author, req.body.name, req.body.genre, req.body.year, req.body.annotation, req.body.image ];
+  sql = "INSERT INTO cart (`id_books`,`author`, `name`, `genre`, `year`, `annotation`, `image` ) Values (?)";
+  db.query(sql, [values], (err, data) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
 /*app.post("/notes", async (req, res) => {
     const values = [req.body.id, req.body.title, req.body.price, req.body.images0, req.body.count];
     sql = "INSERT INTO cart (`id`,`title`, `price`, `images0`, `count`) Values (?)";

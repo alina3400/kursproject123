@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AddButton } from "../Components/AddButton";
+import axios from "axios";
 
 export function Home() {
   const [data, setData] = useState([]);
@@ -10,14 +11,38 @@ export function Home() {
       .then((data) => setData(data))
       .catch((err) => console.log(err));
   }, []);
-
+  const navigate = useNavigate();
+  
+  const [fav, setFav] = useState([]);
   
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    fetch("http://localhost:8081/product")
+      .then((res) => res.json())
+      .then((fav) => setFav(fav))
+      .catch((err) => console.log(err));
+  }, []);
 
-  function handleClick(item: never): void {
-    throw new Error("Function not implemented.");
-  }
+  const handleClick = (item) => {
+    console.log(item);
+    const url = "http://localhost:8081/fav";
+    const datafav = {
+      id: item.id_books,
+      author: item.author,
+      name: item.name,
+      genre: item.genre,
+      year: item.year,
+      annotation: item.annotation,
+      image: item.image,
+    };
+    try {
+      axios
+        .post(url, item)
+        .then((res) => console.log("Added!"))
+        .catch((err) => console.log(err));
+        
+    } catch (error) {}
+  };
 
   return (
     <>
@@ -27,9 +52,9 @@ export function Home() {
             Главная
           </h2>
           <div className="ml-10 mt-10 mr-10">
-          <h2 className=" text-lg justify-self-start font-bold tracking-tight text-gray-900">
-            Детективы
-          </h2>
+            <h2 className=" text-lg justify-self-start font-bold tracking-tight text-gray-900">
+              Детективы
+            </h2>
             <img
               src="src\assets\detective_pic.png"
               className="mt-2 mb-12 justify-self-center mx-auto rounded-lg max-h-36"
@@ -75,16 +100,15 @@ export function Home() {
           </div>
 
           <div className="ml-10 mr-10">
-          <h2 className=" mt-10 text-lg justify-self-start font-bold tracking-tight text-gray-900">
-            Фентези
-          </h2>
+            <h2 className=" mt-10 text-lg justify-self-start font-bold tracking-tight text-gray-900">
+              Фентези
+            </h2>
             <img
               src="src\assets\fantasy.png"
               className="mt-2 mb-12 justify-self-center mx-auto rounded-lg max-h-36"
             ></img>
           </div>
           <div className="justify-items-center space-x-10 mt-6 grid grid-cols-5">
-
             {data &&
               data
                 .filter((a) => a.genre === "Фантастика")

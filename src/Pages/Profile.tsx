@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { AddButton } from "../Components/AddButton";
 
 export function Profile() {
-
   const navigate = useNavigate();
-  const handleLoginEvent = async () =>  {
+  const handleLoginEvent = async () => {
     localStorage.clear();
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <div className="bg-white">
@@ -16,7 +15,12 @@ export function Profile() {
         <h2 className="ml-10 text-2xl justify-self-start font-bold tracking-tight text-gray-900">
           Профиль
         </h2>
-        <button className="ml-12 mt-12 justify-self-start bg-gray-300 relative py-1 text-center h-10 w-24 max-w-48 font-light hover:bg-gray-500 rounded-full" onClick={handleLoginEvent}>Выход</button>
+        <button
+          className="ml-12 mt-12 justify-self-start bg-gray-300 relative py-1 text-center h-10 w-24 max-w-48 font-light hover:bg-gray-500 rounded-full"
+          onClick={handleLoginEvent}
+        >
+          Выход
+        </button>
       </div>
     </div>
   );

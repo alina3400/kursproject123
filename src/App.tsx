@@ -10,23 +10,29 @@ import { Footer } from "./Components/Footer";
 import { Auth } from "./Pages/Auth";
 import { Regist } from "./Pages/Regist";
 import { Profile } from "./Pages/Profile";
+import { Notes } from "./Pages/Notes";
+import { MyBooks } from "./Pages/MyBooks";
 
 export default function App() {
-  return <>
-  <Navbar/>
-<BrowserRouter>
- <Routes>
-   <Route path="/" element={<Home/>}/>                            //Главная страница 
-   <Route path="/books/:proid" element={<BookPage />} />          //Книга отдельно
-   <Route path="/books" element={<Books />} />          
-   <Route path="/help" element={<Help/>}/>                        //Поддержка
-   <Route path="/app" element={<CompanyPage/>}/>                  //О приложении
-   <Route path="/auth" element={<Auth/>}/>                        //Авторизация
-   <Route path="/reg" element={<Regist />} />
-   <Route path="/profile" element={<Profile />} />
-   <Route path="*" element={<Errors/>}/>
- </Routes>
- </BrowserRouter>
- <Footer/>
-  </>
+  return (
+    <>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} /> //Главная страница
+          <Route path="/books/:proid" element={<BookPage />} /> //Книга отдельно
+          <Route path="/books" element={<Books />} />
+          <Route path="/help" element={<Help />} /> //Поддержка
+          <Route path="/app" element={<CompanyPage />} /> //О приложении
+          <Route path="/auth" element={<Auth />} /> //Авторизация
+          <Route path="/reg" element={<Regist />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/notes" element={<Notes />} />
+          <Route path="/profile/fav" element={<MyBooks />} />
+          <Route path="*" element={<Errors />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </>
+  );
 }
