@@ -67,8 +67,9 @@ app.post("/notes", async (req, res) => {
     req.body.name,
     req.body.note,
     req.body.date,
+    req.body.mail
   ];
-  sql = "INSERT INTO notes (`id_notes`,`name`, `note`, `date`) Values (?)";
+  sql = "INSERT INTO notes (`id_notes`,`name`, `note`, `date`,`mail`) Values (?)";
   db.query(sql, [values], (err, data) => {
     if (err) {
       res.json(err);

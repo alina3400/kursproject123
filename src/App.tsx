@@ -12,6 +12,8 @@ import { Regist } from "./Pages/Regist";
 import { Profile } from "./Pages/Profile";
 import { Notes } from "./Pages/Notes";
 import { MyBooks } from "./Pages/MyBooks";
+import { NotePage } from "./Pages/NotePage";
+import { CreateNote } from "./Pages/CreateNote";
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
           <Route path="/reg" element={<Regist />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/notes" element={<Notes />} />
+          <Route path="/profile/notes/new" element={<CreateNote />} />
+          <Route path="/profile/notes/:noteid" element={<NotePage />} />
           <Route path="/profile/fav" element={<MyBooks />} />
           <Route path="*" element={<Errors />} />
         </Routes>
