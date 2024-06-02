@@ -78,9 +78,20 @@ app.post("/notes", async (req, res) => {
   });
 });
 
-app.post("/fav", async (req, res) => {
-  const values = [req.body.id_books, req.body.author, req.body.name, req.body.genre, req.body.year, req.body.annotation, req.body.image ];
-  sql = "INSERT INTO cart (`id_books`,`author`, `name`, `genre`, `year`, `annotation`, `image` ) Values (?)";
+app.get("/fav", (req, res) => {
+  const sql = "SELECT * FROM favbooks";
+  db.query(sql, (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data);
+    }
+  });
+});
+
+app.post("/fav", (req, res) => {
+  const values = [req.body.id, req.body.author, req.body.name, req.body.genre, req.body.year, req.body.annotation, req.body.image, req.body.mail ];
+  sql = "INSERT INTO favbooks (`id_books`,`author`, `name`, `genre`, `year`, `annotation`, `image`, `mail` ) Values (?)";
   db.query(sql, [values], (err, data) => {
     if (err) {
       res.json(err);

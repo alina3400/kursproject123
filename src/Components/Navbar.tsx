@@ -1,5 +1,6 @@
 import { Popover } from "@headlessui/react";
 import { useEffect, useState } from "react";
+import { CiHeart } from "react-icons/ci";
 import { FaRegStickyNote } from "react-icons/fa";
 
 export function Navbar(this: any) {
@@ -57,14 +58,18 @@ export function Navbar(this: any) {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {loggedIn === true && (
               <>
+               <a href="/profile/fav" className="mr-10">
+               <CiHeart className="size-6" />
+                </a>
                 <a href="/profile/notes" className="mt-1 mr-10">
                   <FaRegStickyNote />
                 </a>
+
                 <a
                   href="/profile"
                   className="text-sm font-semibold leading-6 text-gray-900"
                 >
-                  Профиль
+                  {JSON.parse(localStorage.user).name}
                 </a>
               </>
             )}

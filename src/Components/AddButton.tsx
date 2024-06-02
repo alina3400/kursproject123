@@ -11,6 +11,7 @@ export function AddButton() {
 
   const handleClick = () => {
     setActive(!active);
+    
   };
   const var1 =
     "bg-lime-400 relative text-center h-10 w-full  font-light hover:bg-lime-600 rounded-full";

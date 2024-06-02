@@ -19,6 +19,7 @@ export function Auth() {
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []); 
+
   const handleLoginEvent = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const user = { mail, password};
@@ -41,10 +42,17 @@ export function Auth() {
       console.log("user", JSON.stringify(userData))
       console.log(localStorage)
       setSuccess(true);
+
     } else {
       setLoginError("Неверный логин или пароль");
     }
+
   };
+
+  const reload = () => {
+    window.location.reload()
+  }
+
   return (
     <>
       {success ? (
@@ -53,7 +61,7 @@ export function Auth() {
             <div className="font-bold text-2xl text-center">Успешно!</div>
           </div>
           <a href="/">
-            <button className="h-16 bg-lime-400 hover:bg-lime-600 w-52 font-bold text-16 text-center rounded-lg">
+            <button onClick={reload} className="h-16 bg-lime-400 hover:bg-lime-600 w-52 font-bold text-16 text-center rounded-lg">
               Вернуться на главную
             </button>
           </a>
