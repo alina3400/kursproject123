@@ -42,18 +42,7 @@ export function Navbar(this: any) {
             >
               Главная
             </a>
-            <a
-              href="/app"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              О приложении
-            </a>
-            <a
-              href="/help"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Поддержка
-            </a>
+           
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {loggedIn === true && (
