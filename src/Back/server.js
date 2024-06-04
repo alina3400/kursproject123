@@ -79,6 +79,43 @@ app.post("/notes", async (req, res) => {
   });
 });
 
+app.delete("/notes/:id_notes", async (req, res) => {
+  const id = req.params.id_notes;
+   const values = [
+    req.body.id_notes,
+    req.body.name,
+    req.body.note,
+    req.body.date,
+    req.body.mail
+  ]; 
+  sql = `DELETE FROM notes WHERE id_notes = ? `;
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
+
+
+app.post("/notes/:id_notes", async (req, res) => {
+  const id = req.params.id_notes;
+   const name = req.body.name;
+   const note = req.body.note;
+   const date = req.body.date;
+  
+  sql =`UPDATE notes SET name = "${name}", note = "${note}", date = "${date}" WHERE id_notes = "${id}" `;
+  db.query(sql, (err, data) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
 app.get("/fav", (req, res) => {
   const sql = "SELECT * FROM favbooks";
   db.query(sql, (err, data) => {
@@ -94,6 +131,26 @@ app.post("/fav", (req, res) => {
   const values = [req.body.id, req.body.author, req.body.name, req.body.genre, req.body.year, req.body.annotation, req.body.image, req.body.mail ];
   sql = "INSERT INTO favbooks (`id_books`,`author`, `name`, `genre`, `year`, `annotation`, `image`, `mail` ) Values (?)";
   db.query(sql, [values], (err, data) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
+app.delete("/fav/:id_books", async (req, res) => {
+  const id = req.params.id_books;
+  const mail = req.body.mail;
+  //  const values = [
+  //   req.body.id_books,
+  //   req.body.name,
+  //   req.body.note,
+  //   req.body.date,
+  //   req.body.mail
+  // ]; 
+  sql = `DELETE FROM favbooks WHERE id_books = ?`;
+  db.query(sql, [id], (err, data) => {
     if (err) {
       res.json(err);
     } else {
