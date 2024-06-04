@@ -52,8 +52,8 @@ export function Home() {
   return (
     <>
       <div className="bg-white">
-        <div className="grid place-items-stretch justify-items-center sm:py-12 lg:max-w-7xl">
-          <h2 className=" text-2xl justify-self-start font-bold tracking-tight text-gray-900">
+        <div className=" min-w-full w-full grid place-items-stretch justify-items-center sm:py-12 lg:max-w-7xl">
+          <h2 className="ml-20 text-2xl justify-self-start font-bold tracking-tight text-gray-900">
             Главная
           </h2>
           <div className="grid justify-items-center ml-10 mt-10">
